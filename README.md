@@ -1,32 +1,16 @@
-# ACM Research Coding Challenge (Fall 2021)
+# UTD ACM Research Coding Challenge (Fall 2021)
 
-## [](https://github.com/ACM-Research/Coding-Challenge-F21#no-collaboration-policy)No Collaboration Policy
+Activate python virtual environment before running the script: ***`.\env\Scripts\activate`*** for windows cmd
+Command to run the script: ***`python text_analysis.py -i ./data/input.txt`***
 
-**You may not collaborate with anyone on this challenge.**  You  _are_  allowed to use Internet documentation. If you  _do_  use existing code (either from Github, Stack Overflow, or other sources),  **please cite your sources in the README**.
+This script will analyze the input text file to determine sentiment through three methods: NLTK python module, TextBlob python module, and my self-defined analyzer.
 
-## [](https://github.com/ACM-Research/Coding-Challenge-F21#submission-procedure)Submission Procedure
+- With NLTK, it is just a simple setup with a pre-trained sentiment analyzer called VADER (Valence Aware Dictionary and sEntiment Reasoner), which returns a compound value of 0.9982.
+It means the input text sentiment is positive since the compound value is very near to 1 (near to -1, on the other hand, means negative)
 
-Please follow the below instructions on how to submit your answers.
+- With TextBlob, the result is polarity = 0.26241134751773043 and subjectivity = 0.60177304964539, which also means the text is a positive voice.
+Polarity measure shows the subject text is pretty positive while the subjectivity expresses personal feelings/views on the text, which is also positive.
 
-1.  Create a  **public**  fork of this repo and name it  `ACM-Research-Coding-Challenge-F21`. To fork this repo, click the button on the top right and click the "Fork" button.
+- My manual self-defined analyzer returns the sentiment score is 0.0 which means neutral since the number of positive words in the text is equal to the number of negative words
 
-2.  Clone the fork of the repo to your computer using  `git clone [the URL of your clone]`. You may need to install Git for this (Google it).
-
-3.  Complete the Challenge based on the instructions below.
-
-4.  Submit your solution by filling out this [form](https://acmutd.typeform.com/to/zF1IcBGR).
-
-## Assessment Criteria 
-
-Submissions will be evaluated holistically and based on a combination of effort, validity of approach, analysis, adherence to the prompt, use of outside resources (encouraged), promptness of your submission, and other factors. Your approach and explanation (detailed below) is the most weighted criteria, and partial solutions are accepted. 
-
-## [](https://github.com/ACM-Research/Coding-Challenge-S21#question-one)Question One
-
-[Sentiment analysis](https://en.wikipedia.org/wiki/Sentiment_analysis) is a natural language processing technique that computes a sentiment score for a body of text. This sentiment score can quantify how positive, negative, or neutral the text is. The following dataset in  `input.txt`  contains a relatively large body of text.
-
-**Determine an overall sentiment score of the text in this file, explain what this score means, and contrast this score with what you expected.**  If your solution also provides different metrics about the text (magnitude, individual sentence score, etc.), feel free to add it to your explanation.   
-
-**You may use any programming language you feel most comfortable. We recommend Python because it is the easiest to implement. You're allowed to use any library/API you want to implement this**, just document which ones you used in this README file. Try to complete this as soon as possible as submissions are evaluated on a rolling basis.
-
-Regardless if you can or cannot answer the question, provide a short explanation of how you got your solution or how you think it can be solved in your README.md file. However, we highly recommend giving the challenge a try, you just might learn something new!
-
+###### In conclusion, the given text sentiment is positive. 
